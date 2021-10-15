@@ -19,6 +19,10 @@ public class EjemplosIf {
         int edad = teclado.nextInt();
         System.out.println("Tu edad es: " + edad);
         
+        if(edad<0){
+            System.out.println("La edad introducida es incorrecta");
+        }
+        
     }
     
 }
