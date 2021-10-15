@@ -24,9 +24,7 @@ public class EjemplosIf {
         } else {
             System.out.println("La edad es correcta");
         }
-        
-     
-        
+
     }
     
 }
