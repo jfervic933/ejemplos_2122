@@ -16,12 +16,16 @@ public class Ej2 {
 
         Scanner teclado = new Scanner(System.in);
         int n, x;
-        System.out.print("Ingrese el valor final:");
+        System.out.println("Ingrese el valor final:");
         n = teclado.nextInt();
+        // Inicialización de la variables de control
         x = 1;
+        // Condición del bucle. Se ejecuta mientras sea true
         while (x <= n) {
+            // Bloque de sentencias
             System.out.print(x);
             System.out.print(" - ");
+            // Actualización de la variable o variables de control
             x = x + 1;
         }
 
