@@ -10,10 +10,12 @@ import java.util.Scanner;
  *
  * @author profesor
  */
-public class Ej2 {
+public class Ej5 {
 
     public static void main(String[] args) {
 
+        // El bucle do while primero ejecuta todo el bloque de código
+        // al menos una vez y luego mira la condición
         Scanner teclado = new Scanner(System.in);
         int n, x;
         System.out.println("Ingrese el valor final:");
@@ -21,13 +23,13 @@ public class Ej2 {
         // Inicialización de la variables de control
         x = 1;
         // Condición del bucle. Se ejecuta mientras sea true
-        while (x <= n) {
+        do {
             // Bloque de sentencias
             System.out.print(x);
             System.out.print(" - ");
             // Actualización de la variable o variables de control
             x = x + 1;
-        }
+        } while (x <= n);
 
     }
 
