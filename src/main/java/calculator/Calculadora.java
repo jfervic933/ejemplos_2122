@@ -13,6 +13,32 @@ import java.util.Scanner;
  */
 public class Calculadora {
 
+    // Método monstrarMenu. Sólo se utiliza en la clase Calculadora
+    // método privado. No recibe parámetros y no devuelve valor (void)
+    // 
+    private static void mostrarMenu() {
+        System.out.println("Opciones del programa");
+        System.out.println("1 - Sumar");
+        System.out.println("2 - Restar");
+        System.out.println("3 - Salir");
+    }
+
+    private static int sumar(int n1, int n2) {
+        int suma = n1 + n2;
+        return suma;
+    }
+
+    // Método resta. Sólo se utiliza en la clase Calculadora
+    // método privado. Recibe dos parámetros y devuelve un valor entero
+    // con el resultado de la resta de los parámetros
+    private static int restar(int n1, int n2) {
+        int suma = n1 - n2;
+        return suma;
+    }
+    // Método suma. Sólo se utiliza en la clase Calculadora
+    // método privado. Recibe dos parámetros y devuelve un valor entero
+    // con el resultado de la suma de los parámetros
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -70,21 +96,19 @@ public class Calculadora {
         String opcion = "";
         int resultado = 0;
         do {
-
-            System.out.println("Opciones del programa");
-            System.out.println("1 - Sumar");
-            System.out.println("2 - Restar");
-            System.out.println("3 - Salir");
+            mostrarMenu();
             opcion = sc.nextLine();
 
             switch (opcion) {
                 case "1":
-                    resultado = operando1 + operando2;
-                    
+                    resultado = sumar(operando1, operando2);
+
                     break;
                 case "2":
-                    resultado = operando1 - operando2;
-                    
+                    resultado = restar(operando1, operando2);
+
+                    break;
+                case "3":
                     break;
                 default:
                     System.out.println("Opción no válida");
