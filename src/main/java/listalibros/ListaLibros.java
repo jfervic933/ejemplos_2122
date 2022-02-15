@@ -5,6 +5,7 @@
 package listalibros;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -74,5 +75,22 @@ public class ListaLibros {
         }
         return aux;
         
+    }
+    
+    // Collections.sort(lista) lista debe contener objetos que implementan
+    // comparable
+    public void ordenarISBN(){
+        Collections.sort(this.lista);
+    }
+    
+    // Búsqueda binaria de un objeto según la ordenación natural
+    // binarySearch no funciona si la lista está desordenada
+    public int buscarISBN(Libro l){
+        
+        return Collections.binarySearch(lista, l);
+    }
+    
+    public void ordenarComparatorNombre(){
+        Collections.sort(lista, (Libro l1,Libro l2)->l1.getNombre().compareTo(l2.getNombre()));
     }
 }
