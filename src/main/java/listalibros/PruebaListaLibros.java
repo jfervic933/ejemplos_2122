@@ -20,9 +20,9 @@ public class PruebaListaLibros {
         ListaLibros catalogo2 = new ListaLibros();
         
         catalogo.insertarLibro(new Libro("AZC", "La muerte a pellizcos", "Planeta", 10, 0.9));
-        catalogo.insertarLibro(new Libro("BRR", "skldjklsdfjkl", "Planeta", 10, 0.19));
-        catalogo.insertarLibro(new Libro("ACE", "sdafLa muerte a pellizcos", "Planeta", 10, 0.29));
-        catalogo.insertarLibro(new Libro("ABC", "AALa muerte a pellizcos", "Planeta", 10, 0.9));
+        catalogo.insertarLibro(new Libro("BRR", "skldjklsdfjkl", "Planeta", 9, 0.19));
+        catalogo.insertarLibro(new Libro("ACE", "La muerte a pellizcos", "Planeta", 8, 0.29));
+        catalogo.insertarLibro(new Libro("ABC", "La muerte a pellizcos", "Planeta", 7, 0.9));
         
         catalogo.imprimirConsola();
         catalogo.ordenarISBN();
@@ -31,6 +31,13 @@ public class PruebaListaLibros {
         System.out.println("Está en la posicion: " + posicion);
         catalogo.ordenarComparatorNombre();
         catalogo.imprimirConsola();
+        catalogo.ordenarComparatorPaginas();
+        catalogo.imprimirConsola();
+        catalogo.ordenarNombrePaginas();
+        catalogo.imprimirConsola();
+        catalogo.ordenarComparatorNombre();
+        int posicion2 = catalogo.buscarBinariaNombre(new Libro("", "skldjklsdfjkl", "", 0, 0.27));
+        System.out.println("Está en la posicion: " + posicion2);
         
         //catalogo2.insertarLibro(new Libro("125", "La muerte a bocados", "Planeta", 10, 0.9));
         

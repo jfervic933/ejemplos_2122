@@ -6,6 +6,7 @@ package listalibros;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
@@ -92,5 +93,22 @@ public class ListaLibros {
     
     public void ordenarComparatorNombre(){
         Collections.sort(lista, (Libro l1,Libro l2)->l1.getNombre().compareTo(l2.getNombre()));
+    }
+    
+    public int buscarBinariaNombre(Libro l){
+        // lista debe estar ordenada según el criterio que se pasa a este método (nombre)
+        return Collections.binarySearch(lista, l, (Libro l1,Libro l2)->l1.getNombre().compareTo(l2.getNombre()));
+    }
+    
+    public void ordenarComparatorPaginas(){
+        //Collections.sort(lista, (Libro l1,Libro l2)->l1.getNumeroPags() - l2.getNumeroPags());
+        Collections.sort(lista, (l1, l2)->Integer.compare(l1.getNumeroPags(), l2.getNumeroPags()));
+    }
+    
+    public void ordenarNombrePaginas(){
+        Comparator<Libro> criterioNombre = (l1, l2)->l1.getNombre().compareTo(l2.getNombre());
+        Comparator<Libro> criterioPaginas = (l1, l2)->Integer.compare(l1.getNumeroPags(), l2.getNumeroPags());
+        Comparator<Libro> criterioNombrePaginas = criterioNombre.thenComparing(criterioPaginas);
+        Collections.sort(lista, criterioNombrePaginas);
     }
 }
